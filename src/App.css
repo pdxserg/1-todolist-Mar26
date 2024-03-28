@@ -2,15 +2,12 @@
 
 
 .App {
-  margin-right: 50px;
-  padding: 30px;
   display: flex;
   justify-content: center;
 
 }
 .App > div {
-  margin: 20px 50px;
-
+margin: 10px;
 }
 .todolist {
   border: 1px solid;
