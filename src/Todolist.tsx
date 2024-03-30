@@ -1,35 +1,38 @@
 import React from "react";
 
-type TasksPropsType={
-	someItem: string;
-	isDone: boolean
+type TasksPropsType = {
+	title: string;
+	isDone: boolean;
+	id: number
 }
 
-type TodolistPropsType ={
+type TodolistPropsType = {
 	title: string;
 	tasks: Array<TasksPropsType>;
 }
 
 export function Todolist(props: TodolistPropsType) {
-const nameCard = props.title
-	const nameSomeitem = props.tasks
+const title = props.title
+const tasks = props.tasks
+	const taskList: Array<JSX.Element> = tasks.map(task => {
+		return (
+				< li key={task.id}>
+					< input type = "checkbox" checked = {task.isDone} />
+					<span>{task.title}</span >
+				</li>
+			)
 
-
+	})
 	return (
 		<div className="App">
 			<div className="todolist">
-				<h3>wat {nameCard}</h3>
+				<h3>wat {title}</h3>
 				<div>
 					<input/>
 					<button>+</button>
 				</div>
 				<ul>
-					<li><input type="checkbox" checked={nameSomeitem[0].isDone}/> <span>{nameSomeitem[0].someItem}</span></li>
-					<li><input type="checkbox" checked={nameSomeitem[1].isDone}/> <span>{nameSomeitem[1].someItem}</span></li>
-					<li><input type="checkbox" checked={nameSomeitem[2].isDone}/> <span>{nameSomeitem[2].someItem}</span></li>
-
-
-
+					{taskList}
 
 				</ul>
 				<div>

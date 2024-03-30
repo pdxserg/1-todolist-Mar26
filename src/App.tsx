@@ -9,15 +9,15 @@ import { Todolist} from "./Todolist";
 function App() {
 
 	let task1 = [
-		{someItem: "html", isDone: true},
-		{someItem: "css", isDone: true},
-		{someItem: "reakt", isDone: false},
+		{id: 1, title: "html", isDone: true},
+		{id: 2, title: "css", isDone: true},
+		{id: 3, title: "reakt", isDone: false},
 	]
 	let task2 = [
-		{someItem: "milk", isDone: true},
-		{someItem: "ice", isDone: true},
-		{someItem: "bear", isDone: false},
-		{someItem: "smoke", isDone: false},
+		{id: 4, title: "milk", isDone: true},
+		{id: 5, title: "ice", isDone: true},
+		{id: 6, title: "bear", isDone: false},
+		{id: 7, title: "smoke", isDone: false},
 	]
 	return (
 		<div>
