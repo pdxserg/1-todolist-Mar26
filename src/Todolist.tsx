@@ -32,6 +32,16 @@ const tasks = props.tasks
 					<button>+</button>
 				</div>
 				<ul>
+				{/*	{props.tasks.map(task => {*/}
+				{/*	return (*/}
+				{/*	< li key={task.id} >*/}
+				{/*	< input type = "checkbox" checked = {task.isDone} />*/}
+				{/*	<span>{task.title}</span >*/}
+				{/*		<span> ,id={task.id}</span>*/}
+				{/*</li>*/}
+				{/*)*/}
+
+				{/*})}*/}
 					{taskList}
 
 				</ul>
