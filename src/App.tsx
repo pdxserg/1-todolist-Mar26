@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Todolist} from "./Todolist";
+import {Todolist} from "./Todolist";
 
 
 
@@ -17,13 +17,13 @@ function App() {
 		{id: 4, title: "milk", isDone: true},
 		{id: 5, title: "ice", isDone: true},
 		{id: 6, title: "bear", isDone: false},
-		{id: 7, title: "smoke", isDone: false},
+		//{id: 7, title: "smoke", isDone: false},
 	]
 	return (
 		<div>
 			<div>
-				<Todolist title = "What to  learn" tasks={task1}  />
-				<Todolist title = "What to  eat" tasks={task2}/>
+				<Todolist  title ="lern" tasks ={task1}/>
+				<Todolist  title ="eat" tasks ={task2}/>
 
 			</div>
 		</div>
