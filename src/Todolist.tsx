@@ -10,15 +10,18 @@ export type TasksType = {
 type TodolistPropsType = {
 	title: string
 	tasks: Array<TasksType>
+	removeTask: (taskId: number) => void
 }
 
-export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
+export const Todolist: React.FC<TodolistPropsType> = ({tasks, removeTask, title}) => {
 
 	const taskList = tasks.map((task) => {
+		const removeTaskHendler = () => removeTask(task.id)
 		return (
 			<li key={task.id}>
 				<input type="checkbox" checked={task.isDone}/>
 				<span>{task.title}</span>
+				<button onClick={removeTaskHendler}>x</button>
 			</li>
 		)
 	})
@@ -28,7 +31,7 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
 				<h3>{title}</h3>
 				<div>
 					<input/>
-					<Button onclick={()=>{} } title="-" />
+					<Button onclick={()=>{} } title="+" />
 				</div>
 				{tasks.length === 0 ? (
 					<p>Tasks doesn't exist</p>
