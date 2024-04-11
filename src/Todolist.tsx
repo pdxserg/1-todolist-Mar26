@@ -1,6 +1,6 @@
 import React from "react";
-import {Button} from "./Button";
-
+import {Button} from "./components/Button";
+import s from'./components/Button.module.css'
 
 export type TasksType = {
 	id: number
@@ -15,7 +15,12 @@ type TodolistPropsType = {
 export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
 
 	const taskList = tasks.map((task) => {
-		return <li key={task.id}><input type="checkbox" checked={task.isDone}/><span>{task.title}</span></li>
+		return (
+			<li key={task.id}>
+				<input type="checkbox" checked={task.isDone}/>
+				<span>{task.title}</span>
+			</li>
+		)
 	})
 	return (
 		<div className="App">
@@ -23,7 +28,7 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
 				<h3>{title}</h3>
 				<div>
 					<input/>
-					<Button title="-"/>
+					<Button onclick={()=>{} } title="-" />
 				</div>
 				{tasks.length === 0 ? (
 					<p>Tasks doesn't exist</p>
@@ -34,9 +39,9 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
 				)}
 
 				<div>
-					<Button title="All"/>
-					<Button title="Active"/>
-					<Button title="Completed"/>
+					<Button onclick={()=>{}} title="All" color={'red'}/>
+					<Button onclick={()=>{}} title="Active" color={'secondary'}/>
+					<Button onclick={()=>{}} title="Completed" disabled/>
 				</div>
 			</div>
 		</div>

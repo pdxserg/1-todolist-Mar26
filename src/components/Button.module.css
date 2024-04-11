@@ -1,0 +1,16 @@
+
+.button{
+    background-color: #b4a9a9;
+    border-radius: 14px;
+}
+
+
+.red{
+    background-color: #ee1f1f;
+}
+.secondary{
+    background-color: #93a6e7;
+}
+.disabled{
+    background-color: #7dd779;
+}
