@@ -76,7 +76,7 @@ import {ButtonHTMLAttributes} from "react";
 
 type ButtonProps = {
 	title: string
-	onclick: () =>void
+	//onclick: () =>void
 	color?: string
 	disabled?: boolean
 }& ButtonHTMLAttributes<HTMLButtonElement>
