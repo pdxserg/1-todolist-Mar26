@@ -1,6 +1,6 @@
 import React from "react";
 import {Button} from "./components/Button";
-import {FilterValuesType} from "./App";
+
 
 
 export type TasksType = {
@@ -11,20 +11,19 @@ export type TasksType = {
 type TodolistPropsType = {
 	title: string
 	tasks: Array<TasksType>
-	removeTask: (taskId: number)=> void
-	changeTodoList: (nextFilter: FilterValuesType) =>void
+
 
 }
 
-export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask, changeTodoList}) => {
+export const Todolist: React.FC<TodolistPropsType> = ({tasks, title}) => {
 
 	const taskList = tasks.map((task) => {
-		const removeTaskHandler = () =>{removeTask(task.id)}
+
 		return (
 			<li key={task.id}>
 				<input type="checkbox" checked={task.isDone}/>
 				<span>{task.title}</span>
-				<button onClick={removeTaskHandler}>x</button>
+				{/*<button onClick={()=>{}}>x</button>*/}
 				{/*<button onClick={removeTaskHendler}>x</button>*/}
 			</li>
 		)
@@ -35,7 +34,7 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask,
 				<h3>{title}</h3>
 				<div>
 					<input/>
-					<Button title={"+"} />
+					<Button onClick={()=>{}} title={"+"} />
 				</div>
 				{tasks.length === 0 ? (
 					<p>Tasks doesn't exist</p>
@@ -46,9 +45,9 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask,
 				)}
 
 				<div>
-					<Button    onClick={()=> changeTodoList("all")} title="All" color={'red'}/>
-					<Button onClick={()=> changeTodoList("active")} title="Active" color={'secondary'}/>
-					<Button onClick={()=> changeTodoList("completed")} title="Completed"/>
+					<Button onClick={()=>{}}  title="All" />
+					<Button onClick={()=>{}} title="Active" />
+					<Button onClick={()=>{}} title="Completed"/>
 				</div>
 			</div>
 		</div>
