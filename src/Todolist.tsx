@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from "./components/Button";
+import {FilterValuesType} from "./App";
 
 
 export type TasksType = {
@@ -11,10 +12,11 @@ type TodolistPropsType = {
 	title: string
 	tasks: Array<TasksType>
 	removeTask: (taskId: number)=> void
+	changeTodoList: (nextFilter: FilterValuesType) =>void
 
 }
 
-export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask}) => {
+export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask, changeTodoList}) => {
 
 	const taskList = tasks.map((task) => {
 		const removeTaskHandler = () =>{removeTask(task.id)}
@@ -44,9 +46,9 @@ export const Todolist: React.FC<TodolistPropsType> = ({tasks, title, removeTask}
 				)}
 
 				<div>
-					<Button  title="All" color={'red'}/>
-					<Button  title="Active" color={'secondary'}/>
-					<Button  title="Completed" disabled/>
+					<Button    onClick={()=> changeTodoList("all")} title="All" color={'red'}/>
+					<Button onClick={()=> changeTodoList("active")} title="Active" color={'secondary'}/>
+					<Button onClick={()=> changeTodoList("completed")} title="Completed"/>
 				</div>
 			</div>
 		</div>

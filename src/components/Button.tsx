@@ -17,9 +17,9 @@
 // 	//const styleButton = s.button+' '+ s.red
 // 	//const styleButton = `${s.button} ${s.red}`
 // 	const styleButton = `
-// 	${s.button} 
-// 	${color === 'red'? s.red : color === 'secondary' ?  s.secondary : s.button}
-// 	${disabled? s.disabled : ''}
+// 	${s.button} ;
+// 	${color === 'red'? s.red : color === 'secondary' ?  s.secondary : s.button};
+// 	$ {disabled? s.disabled : ''};
 // 	`
 // 	return (
 //
@@ -70,18 +70,19 @@
 // 	);
 // };
 
-// @flow 
+
 import * as React from 'react';
 import {ButtonHTMLAttributes} from "react";
 
 type ButtonProps = {
 	title: string
-	//onclick: () =>void
+	onClick?: () =>void
 	color?: string
 	disabled?: boolean
+
 }& ButtonHTMLAttributes<HTMLButtonElement>
-export const Button = ({title, ...restButtonProps}: ButtonProps) => {
+export const Button = ({title, onClick}: ButtonProps) => {
 	return (
-		<button >{title}</button>
+		<button onClick={onClick} >{title}</button>
 	);
 };
