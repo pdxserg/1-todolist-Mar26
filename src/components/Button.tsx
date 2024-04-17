@@ -76,12 +76,10 @@ import {ButtonHTMLAttributes} from "react";
 
 type ButtonProps = {
 	title: string
-	onClick: () =>void
-
-
-}& ButtonHTMLAttributes<HTMLButtonElement>
-export const Button = ({title, onClick}: ButtonProps) => {
+	onCl: () =>void
+}
+export const Button = ({title, onCl}: ButtonProps) => {
 	return (
-		<button onClick={onClick} >{title}</button>
+		<button onClick={onCl} >{title}</button>
 	);
 };
